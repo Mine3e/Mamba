@@ -1,0 +1,19 @@
+﻿﻿@using Core.Models
+@model Team
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form asp-action="Deleteteam" method="post" class="card" style="width: 18 rem">
+
+                <img src="~/Upload/Team/@Model.ImageUrl" class="card-image-top" width="100px" height="100px" alt="" />
+                <div class="card-body">
+                    <h5 class="card-title"> @Model.Name</h5>
+                    <p class="card-text"> @Model.Description</p>
+                    <input asp-for="@Model.Id" hidden value="@Model.Id"/>
+                    <a asp-action="Index" asp-controller="Team" class="btn btn-warning"> Go back</a>
+                    <button type="submit" class="btn btn-danger"> Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
